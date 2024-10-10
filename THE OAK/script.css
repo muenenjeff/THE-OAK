@@ -1,0 +1,101 @@
+/* Basic styles for the body */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation bar styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+}
+
+/* Logo styles */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Links styling */
+ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  margin-left: 20px;
+}
+
+ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* Hamburger menu icon styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* Menu links for mobile, hidden initially */
+.menu {
+  display: flex;
+}
+
+/* Hide the menu links by default on small screens */
+@media (max-width: 768px) {
+  ul {
+      display: none;
+  }
+
+  .hamburger {
+      display: flex;
+  }
+
+  /* When the hamburger menu is open */
+  .menu.open ul {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background-color: #333;
+      width: 100%;
+      text-align: right;
+  }
+
+  .menu.open ul li {
+      margin: 10px 0;
+      padding-right: 20px;
+  }
+}
+
+/* When the hamburger icon is clicked, transform it into an "X" */
+.hamburger.open div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
